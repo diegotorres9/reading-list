@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NavSearch from "./NavSearch";
+import ReadingGoal from "./ReadingGoal";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -12,14 +14,16 @@ export default function Navbar() {
     ];
 
     return (
-        <div>
-            <nav className="flex flex-col bg-secondary">
+        <div className="h-full bg-bg-secondary w-sidebar row-span-6">
+            <NavSearch />
+            <nav className="flex flex-col">
                 {navLinks.map((link) => (
-                    <Link className="text-2xl font-sans" key={link.href} href={link.href}>
+                    <Link className="text-base font-sans text-text-primary" key={link.href} href={link.href}>
                         {link.name}
                     </Link>
                 ))}
             </nav>
+            <ReadingGoal />
         </div>
     )
 }
