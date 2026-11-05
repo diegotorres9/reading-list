@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Lora, Inter, JetBrains_Mono } from "next/font/google";
-import Header from "../components/Header";
 // import "./globals.css";
 import "./tailwind.css";
 import "./tokens.css";
@@ -31,8 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${loraSerif.variable} ${interSans.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-primary">
-        <Header />
+      <body className="min-h-full flex flex-col bg-bg-primary">
         {children}
       </body>
     </html>
